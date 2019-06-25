@@ -1,0 +1,88 @@
+.loginForm{
+    padding: 122px 0px;
+    margin: 0 10%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="loginForm"] {
+    width: 100%;
+    margin: 0;
+    padding : 0;
+  }
+} 
+
+.form-full-width{
+    width: 100%;
+}
+
+.submitBtn{
+    width : 100%; 
+}
+
+/*   CSS animation for the background     */
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 30s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #f21eb157 50%, #326df159 52%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  /* z-index:-1; */
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:30s;
+}
+
+.bg3 {
+  animation-duration:25s;
+}
+
+.content {
+  /*background-color:rgba(255,255,255,.8);*/
+  border-radius:.25em;
+  box-shadow:0 0 1.25em rgba(0,0,0,1.00);
+  box-sizing:border-box;
+  left:50%;
+  /* padding:10vmin; */
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="content"] {
+    box-shadow:none;
+    width : 100%;
+    padding: 0 10px;
+  }
+} 
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+/*    CSS animation END                    */
