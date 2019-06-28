@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../token.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+    isLoggedIn$: Observable<boolean>;
 
-  ngOnInit() {
-  }
+    constructor(private tokenService: TokenService) { }
+
+    ngOnInit() {
+        this.isLoggedIn$ = this.tokenService.isLoggedIn();
+    }
 
 }

@@ -25,7 +25,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/ace-builds/src-min/ace.js",
+                "node_modules/ace-builds/src-min/mode-json.js",
+                "node_modules/ace-builds/src-min/mode-java.js",
+                "node_modules/ace-builds/src-min/theme-eclipse.js",
+                { "bundleName": "worker-json", "input": "node_modules/ace-builds/src-min/worker-json.js" },
+                { "bundleName": "worker-javascript", "input": "node_modules/ace-builds/src-min/worker-javascript.js"}
+            ]
           },
           "configurations": {
             "production": {

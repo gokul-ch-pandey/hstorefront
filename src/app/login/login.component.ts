@@ -4,13 +4,15 @@ import { Router } from '@angular/router';
 import { UserData } from '../userdata';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent {
 
     error = false;
+    isLoggedIn: boolean;
+
 
     userData: UserData = new UserData();
 
@@ -32,7 +34,11 @@ export class LoginComponent  {
     }
 
 
-  constructor(private tokenService: TokenService, private router: Router) {
-   }
+    constructor(private tokenService: TokenService, private router: Router) {
+        this.tokenService.isLoggedIn().subscribe(value => this.isLoggedIn = value);
+        if (this.isLoggedIn) {
+            router.navigateByUrl('/home');
+        }
+    }
 
 }
