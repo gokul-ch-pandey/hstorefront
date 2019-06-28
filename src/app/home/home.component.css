@@ -9,7 +9,6 @@
     height:100vh;  
     position: fixed;
     right: -50%;
-    top: 0;
     left: -50%;
     opacity: 0.5;
 }
